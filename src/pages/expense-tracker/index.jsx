@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { signOut } from "firebase/auth";
+//import { signOut } from "firebase/auth";
 import  {useAddTransaction} from "../../hooks/useAddTransaction";
 import {useGetTransactions } from "../../hooks/useGetTransactions";
-import {useGetUserinfo } from "../../hooks/useGetUserinfo";
+import {useGetUserinfo} from "../../hooks/useGetUserinfo";
 import { useNavigate } from "react-router-dom";
 import "./styles.css";
 import { auth } from "../../config/firebase-config";
