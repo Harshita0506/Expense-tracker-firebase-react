@@ -55,3 +55,23 @@
     box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.25);
     cursor: not-allowed;
   }
+
+  @media (max-width: 768px) {
+    .login-page {
+      padding: 20px;
+      text-align: center;
+    }
+  
+    .login-page p {
+      font-size: 30px; /* Heading chhoti kar di mobile pe */
+    }
+  
+    .login-with-google-btn {
+      width: 100%; /* Mobile pe button pura width lega */
+      max-width: 300px; /* but max 300px tak hi rahe */
+      padding: 10px 16px 10px 42px; /* padding thoda adjust kiya */
+      font-size: 18px;  /* font size mobile friendly */
+      background-position: 12px center; /* icon ko center align kiya vertically */
+    }
+  }
+  

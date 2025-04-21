@@ -1,63 +1,195 @@
 body, html {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    width: 100%;
-  }
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+}
+
 .expense-tracker {
-    width: 100vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    color: #023047;
-  }
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #023047;
+}
+
+.expense-tracker h1 {
+  font-size: 40px;
+}
+
+.expense-tracker button {
+  margin-left: 10px;
+}
+.add-transaction {
+  display: flex;
+  flex-direction: row; /* Desktop ke liye side by side */
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 200px;
+}
+
+.profile-photo {
+  width: 200px;
+  border-radius: 50%;
+}
+
+.sign-out-button , .add-transaction button{
+  border: none;
+  margin-top: 50px;
+  width: 150px;
+  background: #3498db;
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+.add-transaction button{
+  background:black;
+  width: 300px;
+  margin-top: 10px;
+  padding: 5px 10px 5px 10px;
+  font-size: 19px;
   
-  .expense-tracker h1 {
-    font-size: 40px;
-  }
-  .expense-tracker button {
-    margin-left: 10px;
-  }
+}
+
+.sign-out-button:hover {
+  background: #3cb0fd;
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.transactions {
+  margin-left: 430px;
+  margin-top: 20px;
+  padding-left: 10px;
+  width: 600px;
+  height: 400px;
+  overflow: auto;
+  border: 3px solid #023047;
+}
+
+/* MEDIA QUERIES FOR RESPONSIVENESS */
+
+/* Tablets (portrait & landscape) */
+@media (max-width: 1024px) {
   .profile {
-    display: flex;
+      margin-left: 50px;
+  }
+  .expense-tracker{
     flex-direction: column;
-    align-items: center;
-    margin-left: 200px;
   }
-  .profile-photo {
-    width: 200px;
-    border-radius: 50%;
+  .box{
+    flex-direction: column;
   }
-  
-  .sign-out-button {
-    border: none;
-    margin-top: 50px;
-    width: 150px;
-    background: #3498db;
-    background-image: linear-gradient(to bottom, #3498db, #2980b9);
-    border-radius: 10px;
-    color: #ffffff;
-    font-size: 22px;
-    font-weight: bold;
-    padding: 10px 20px 10px 20px;
-    text-decoration: none;
-  }
-  
-  .sign-out-button:hover {
-    background: #3cb0fd;
-  
-    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
   .transactions {
-    margin-left: 430px;
-    margin-top: 20px;
-    padding-left: 10px;
-    width: 600px;
-    height: 400px;
-    overflow: auto;
-    border: 3px solid #023047;
+      margin-left: 50px;
+      width: 80%;
+      height: 400px;
   }
+
+  .expense-tracker h1 {
+      font-size: 32px;
+  }
+}
+
+/* Large Mobile Devices */
+@media (max-width: 768px) {
+  .expense-tracker {
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 20px;
+  }
+  .add-transaction {
+    flex-direction: column; /* Mobile pe column ho jayega */
+    align-items: stretch;   /* Inputs puri width le sakte hain */
+}
+
+.add-transaction input, 
+.add-transaction button {
+    width: 100%;    /* Full width inputs aur button */
+    margin-bottom: 10px; /* thoda gap niche */
+}
+
+.add-transaction label {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+  .profile {
+      margin-left: 0;
+      margin-bottom: 20px;
+  }
+  .box{
+    flex-direction: column;
+  }
+
+  .transactions {
+      margin-left: 0;
+      width: 90%;
+      height: auto;
+  }
+  .expense-tracker h1 {
+      font-size: 28px;
+  }
+
+  .profile-photo {
+      width: 150px;
+  }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+  .add-transaction {
+    flex-direction: column; /* Mobile pe column ho jayega */
+    align-items: stretch;   /* Inputs puri width le sakte hain */
+}
+
+.add-transaction input, 
+.add-transaction button {
+    width: 100%;    /* Full width inputs aur button */
+    margin-bottom: 10px; /* thoda gap niche */
+}
+
+/* .add-transaction input[type="radio"] {
+    width: auto;   
+    margin: 5px 0;
+} */
+
+.add-transaction label {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+  .expense-tracker h1 {
+      font-size: 24px;
+  }
+  .box{
+    flex-direction: column;
+  }
+  .sign-out-button {
+      width: 120px;
+      font-size: 18px;
+      padding: 8px 16px;
+      margin:16px;
+  }
+
+  .profile-photo {
+      width: 120px;
+  }
+
+  .transactions {
+      width: 100%;
+      height: auto;
+      padding: 5px;
+  }
+}
